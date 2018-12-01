@@ -1,0 +1,17 @@
+{
+"characters": "",
+"size": 12,
+"hinting": "AutoSlight",
+"color": "white",
+"colorValue": -1,
+"gamma": 0.5,
+"renderCount": 2,
+"borderGamma": 1.8,
+"shadowOffsetX": 1,
+"shadowOffsetY": 1,
+"shadowColor": "black",
+"shadowColorValue": 255,
+"kerning": true,
+"minFilter": "Nearest",
+"magFilter": "Nearest"
+}

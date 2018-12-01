@@ -1,0 +1,58 @@
+
+shadow-walker-ui.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+bg
+  rotate: false
+  xy: 1, 322
+  size: 388, 553
+  orig: 388, 553
+  offset: 0, 0
+  index: -1
+button-focussed
+  rotate: false
+  xy: 1, 208
+  size: 242, 71
+  split: 52, 52, 0, 0
+  pad: 52, 52, 16, 17
+  orig: 242, 71
+  offset: 0, 0
+  index: -1
+button-normal
+  rotate: false
+  xy: 391, 731
+  size: 242, 71
+  split: 52, 52, 0, 0
+  pad: 52, 52, 16, 17
+  orig: 242, 71
+  offset: 0, 0
+  index: -1
+button-over
+  rotate: false
+  xy: 391, 804
+  size: 242, 71
+  split: 52, 52, 0, 0
+  pad: 52, 52, 16, 17
+  orig: 242, 71
+  offset: 0, 0
+  index: -1
+button-pressed
+  rotate: false
+  xy: 635, 804
+  size: 242, 71
+  split: 52, 52, 0, 0
+  pad: 52, 52, 18, 15
+  orig: 242, 71
+  offset: 0, 0
+  index: -1
+label-bg
+  rotate: false
+  xy: 1, 281
+  size: 376, 39
+  split: 46, 46, 0, 0
+  pad: 46, 46, 10, 11
+  orig: 376, 39
+  offset: 0, 0
+  index: -1

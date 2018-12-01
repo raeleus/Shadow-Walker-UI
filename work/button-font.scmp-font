@@ -1,0 +1,17 @@
+{
+"characters": "",
+"size": 24,
+"hinting": "AutoFull",
+"color": "button-font",
+"colorValue": -220300033,
+"gamma": 1.8,
+"renderCount": 2,
+"borderGamma": 1.8,
+"shadowOffsetX": 2,
+"shadowOffsetY": 1,
+"shadowColor": "black",
+"shadowColorValue": 255,
+"kerning": true,
+"minFilter": "Nearest",
+"magFilter": "Nearest"
+}
