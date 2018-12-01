@@ -1,8 +1,8 @@
-#Shadow Walker UI#
+#Shadow Walker UI Example#
 
 ### About ###
 
-Shadow Walker UI is a skin for LibGDX Scene2D.UI on the LWJGL3 backend. This example project showcases new features from the 1.9.9 update:
+Shadow Walker UI is a skin for LibGDX Scene2D.UI on the LWJGL3 backend. This example project implements the skin and showcases new features from the 1.9.9 update:
 
 * Focusable buttons
 * Transparent window rendering.
