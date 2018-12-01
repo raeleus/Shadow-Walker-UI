@@ -3,7 +3,7 @@ atlasData: {
 	atlasCurrent: true
 	drawables: [
 		{
-			file: E:/workspace/Shadow Walker UI/output/bg.png
+			file: E:/workspace/Shadow Walker UI/raw/bg.png
 			bgColor: {
 				r: 1
 				g: 1
@@ -20,7 +20,7 @@ atlasData: {
 			customized: false
 		}
 		{
-			file: E:/workspace/Shadow Walker UI/output/button-over.9.png
+			file: E:/workspace/Shadow Walker UI/raw/button-over.9.png
 			bgColor: {
 				r: 1
 				g: 1
@@ -37,7 +37,7 @@ atlasData: {
 			customized: false
 		}
 		{
-			file: E:/workspace/Shadow Walker UI/output/button-focussed.9.png
+			file: E:/workspace/Shadow Walker UI/raw/button-focussed.9.png
 			bgColor: {
 				r: 0
 				g: 0
@@ -54,7 +54,7 @@ atlasData: {
 			customized: false
 		}
 		{
-			file: E:/workspace/Shadow Walker UI/output/button-normal.9.png
+			file: E:/workspace/Shadow Walker UI/raw/button-normal.9.png
 			bgColor: {
 				r: 1
 				g: 1
@@ -71,7 +71,7 @@ atlasData: {
 			customized: false
 		}
 		{
-			file: E:/workspace/Shadow Walker UI/output/label-bg.9.png
+			file: E:/workspace/Shadow Walker UI/raw/label-bg.9.png
 			bgColor: {
 				r: 1
 				g: 1
@@ -88,7 +88,7 @@ atlasData: {
 			customized: false
 		}
 		{
-			file: E:/workspace/Shadow Walker UI/output/button-pressed.9.png
+			file: E:/workspace/Shadow Walker UI/raw/button-pressed.9.png
 			bgColor: {
 				r: 1
 				g: 1
