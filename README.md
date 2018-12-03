@@ -1,4 +1,4 @@
-#Shadow Walker UI Example#
+# Shadow Walker UI Example #
 
 ### About ###
 
@@ -10,6 +10,7 @@ Shadow Walker UI is a skin for LibGDX Scene2D.UI on the LWJGL3 backend. This exa
 Focusable buttons require some of your own logic to handle key presses. This new technique will allow you to use buttons on devices without mouse/touch input fairly easily.
 Transparent window rendering does not work well under Windows 10 on Nvidia cards. This function will remain deprecated until these issues are resolved in LWJGL3. However, this example shows a technique of removing all window decorations and allowing for uniquely shaped or transparent backgrounds.
 
+Branch ControllerMenuStage uses MrStahlfelge's Stage replacement to handle keyboard and controller interaction with Scene2D focusable objects. This dramatically simplifies the code to handle arrow key presses. Instructions to follow for your projects are here: https://github.com/MrStahlfelge/gdx-controllerutils/wiki/Button-operable-Scene2d
 
 ### License ###
 MIT License
