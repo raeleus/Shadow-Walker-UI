@@ -29,20 +29,17 @@ import com.badlogic.gdx.utils.Json;
 import com.badlogic.gdx.utils.JsonValue;
 import com.badlogic.gdx.utils.Scaling;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
+import de.golfgl.gdx.controllers.ControllerMenuStage;
 
 public class Core extends ApplicationAdapter {
-    private Stage stage;
+    private ControllerMenuStage stage;
     private Skin skin;
     public static DesktopWorker desktopWorker;
     private int dragStartX, dragStartY;
     private int windowStartX, windowStartY;
-    private int focusIndex;
-    private Array<TextButton> buttons;
 
     @Override
     public void create() {
-        focusIndex = -1;
-        
         skin = new Skin(Gdx.files.internal("shadow-walker-ui.json")) {
             //Override json loader to process FreeType fonts from skin JSON
             @Override
@@ -89,7 +86,7 @@ public class Core extends ApplicationAdapter {
             }
         };
         
-        stage = new Stage(new ScreenViewport());
+        stage = new ControllerMenuStage(new ScreenViewport());
         Gdx.input.setInputProcessor(stage);
         
         final Table root = new Table();
@@ -113,8 +110,6 @@ public class Core extends ApplicationAdapter {
         label.setAlignment(Align.center);
         table.add(label).growX();
         
-        buttons = new Array<TextButton>();
-        
         table.row();
         Table subTable = new Table();
         table.add(subTable);
@@ -122,22 +117,24 @@ public class Core extends ApplicationAdapter {
         subTable.defaults().fillX();
         TextButton textButton = new TextButton("Start Game", skin);
         subTable.add(textButton);
-        buttons.add(textButton);
+        stage.addFocusableActor(textButton);
+        stage.setFocusedActor(textButton);
+        stage.setEscapeActor(textButton);
         
         subTable.row();
         textButton = new TextButton("Multiplayer", skin);
         subTable.add(textButton);
-        buttons.add(textButton);
+        stage.addFocusableActor(textButton);
         
         subTable.row();
         textButton = new TextButton("Options", skin);
         subTable.add(textButton);
-        buttons.add(textButton);
+        stage.addFocusableActor(textButton);
         
         subTable.row();
         textButton = new TextButton("Quit", skin);
         subTable.add(textButton);
-        buttons.add(textButton);
+        stage.addFocusableActor(textButton);
         textButton.addListener(new ChangeListener() {
             @Override
             public void changed(ChangeListener.ChangeEvent event, Actor actor) {
@@ -177,70 +174,6 @@ public class Core extends ApplicationAdapter {
                 windowStartY = desktopWorker.getWindowY();
             }
         });
-        
-        stage.addListener(new InputListener() {
-            @Override
-            public boolean mouseMoved(InputEvent event, float x, float y) {
-                removeFocus();
-                return super.mouseMoved(event, x, y);
-            }
-            
-            @Override
-            public boolean keyDown(InputEvent event, int keycode) {
-                switch (keycode) {
-                    case Keys.TAB:
-                        if (Gdx.input.isKeyPressed(Keys.SHIFT_LEFT) || Gdx.input.isKeyPressed(Keys.SHIFT_RIGHT)) {
-                            focusIndex--;
-                        } else {
-                            focusIndex++;
-                        }
-
-                        updateFocus();
-                        break;
-                        
-                    case Keys.UP:
-                        focusIndex--;
-                        updateFocus();
-                        break;
-                        
-                    case Keys.DOWN:
-                        focusIndex++;
-                        updateFocus();
-                        break;
-                        
-                    case Keys.SPACE:
-                    case Keys.ENTER:
-                        if (focusIndex >=0 && focusIndex < buttons.size) {
-                            InputEvent touchEvent = new InputEvent();
-                            touchEvent.setType(InputEvent.Type.touchDown);
-                            buttons.get(focusIndex).fire(touchEvent);
-                            
-                            touchEvent = new InputEvent();
-                            touchEvent.setType(InputEvent.Type.touchUp);
-                            buttons.get(focusIndex).fire(touchEvent);
-                        }
-                        break;
-                }
-                
-                return super.keyDown(event, keycode);
-            }
-            
-        });
-    }
-    
-    private void updateFocus() {
-        if (focusIndex < 0) {
-            focusIndex = buttons.size - 1;
-        } else if (focusIndex >= buttons.size) {
-            focusIndex = 0;
-        }
-        
-        stage.setKeyboardFocus(buttons.get(focusIndex));
-    }
-    
-    private void removeFocus() {
-        focusIndex = -1;
-        stage.setKeyboardFocus(null);
     }
 
     @Override
